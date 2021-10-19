@@ -1,2 +1,2 @@
-# neural_network
-Neural network from scratch in python
+# neural network
+ANN from scratch in python
