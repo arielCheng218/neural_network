@@ -1,21 +1,20 @@
-
 import numpy as np
-from Layer import *
 
 def main():
+  with open('data_banknote_authentication.txt') as f:
+    lines = f.readlines()
+    np.random.shuffle(lines)
+    inp = []
+    exp = []
+    for line in lines:
+      line = line.split(",")
+      inp.append([float(x) for x in line[:3]])
+      exp.append([float(line[-1])])
+    print(inp)
+    print(exp)
+    # training set
+    
+    # testing set
 
-  X = [
-    [2, 3, 2, 2.5],
-    [2.0, 3.4, 1, 3],
-    [1, 3, 2, 6]
-  ]
-
-  layer1 = Layer(4, 5)
-  layer2 = Layer(5, 2)
-
-  layer1.forward(X)
-  layer2.forward(layer1.output)
-
-  print(layer1.output)
-
-main()
+if __name__ == "__main__":
+  pass
