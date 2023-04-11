@@ -1,4 +1,5 @@
 from utils import *
+from math import random, cos, pi, log, sqrt
 
 class Layer:
 
@@ -6,7 +7,10 @@ class Layer:
     self.input_num = input_num
     self.output_num = output_num
     self.activation = activation
-    self.weights = [1 for _ in range(input_num)]
+    self.weights
+    
+    # Normally distributed weights (re: https://en.wikipedia.org/wiki/Box%E2%80%93Muller_transform)
+    self.weights = [sqrt(-2*log(u:=random())) * cos(2*pi*u) for _ in range(input_num)]
     self.bias = 0
   
   def forward(self, inputs):
